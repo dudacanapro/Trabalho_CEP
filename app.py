@@ -26,13 +26,12 @@ def main():
     # Digitação dos dados 
     tam_lote = st.number_input("Digite o tamanho do lote (N): ")
     tam_amostra = st.number_input("Digite o tamanho da amostra (n): ")
-    numero_lotes = st.number_input("Digiteo número de lotes: ")
+    numero_lotes = st.number_input("Digite o número de lotes: ")
     itens_aceitos = st.number_input("Digite o número de itens aceitáveis (a): ")
-    custo_unitario = st.number_input("Digite o custo unitário: R$ ")
-    custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote rejeitado: R$ ")
+    custo_unitario = st.number_input("Digite o custo unitário de inspeção: R$ ")
+    custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote reprovado: R$ ")
     tx_defeitos = st.number_input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): ")
     tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (NQA) (número entre 0 a 1 separado por '.' ): ")
-    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (PTDL) (número entre 0 a 1 separado por '.'): ")
 
 
     # Cálculo probabilidade de aceitação (NQA e Real do Fornecedor)
@@ -66,8 +65,7 @@ def main():
     st.write(f"Probabilidade de rejeição injusta do lote do fornecedor: {tx_injustamente_rejeitada_NQA:.4f}")
     st.write(f"Custo de inspeção: R$ {custo_inspecao:.2f}")
     st.write(f"Custo de deslocamento: R$ {custo_deslocamento:.2f}")
-    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}): {risco_consumidor:.4f}")
-
+    
 
 
 
