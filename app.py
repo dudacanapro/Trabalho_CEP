@@ -32,6 +32,7 @@ def main():
     custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote reprovado: R$ ")
     tx_defeitos = st.number_input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): ")
     tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (NQA) (número entre 0 a 1 separado por '.' ): ")
+    taxa_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (PTDL) (número entre 0 a 1 separado por '.' ): ", min_value=0.0, max_value=1.0, format="%.4f")
 
 
     # Cálculo probabilidade de aceitação (NQA e Real do Fornecedor)
