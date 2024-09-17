@@ -68,7 +68,5 @@ def main():
     st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {taxa_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
     
 
-
-
 if __name__ == "__main__":
     main()
