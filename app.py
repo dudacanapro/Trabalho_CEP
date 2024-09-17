@@ -30,9 +30,9 @@ def main():
     itens_aceitos = st.number_input("Digite o número de itens aceitáveis: ")
     custo_unitario = st.number_input("Digite o custo unitário: R$ ")
     custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote rejeitado: R$ ")
-    tx_defeitos = float(input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): "))
-    tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (número entre 0 a 1 separado por '.' ): "))
-    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (número entre 0 a 1 separado por '.'): "))
+    tx_defeitos = st.number_input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): ")
+    tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (número entre 0 a 1 separado por '.' ): ")
+    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (número entre 0 a 1 separado por '.'): ")
 
 
     # Cálculo probabilidade de aceitação (NQA e Real do Fornecedor)
