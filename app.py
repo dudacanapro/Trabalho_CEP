@@ -60,13 +60,13 @@ def main():
 
 
     # Resultados 
-    st.write(f"Probabilidade de aceitação real (fornecedor) do lote é: {tx_aceitacao:.4f}")
-    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada:.4f}")
-    st.write(f"Probabilidade de aceitação desejado do lote é: {tx_aceitacao_NQA:.4f}")
-    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada_NQA:.4f}")
-    st.write(f"Custo de inspeção é: R$ {custo_inspecao:.2f}")
-    st.write(f"Custo de deslocamento é: R$ {custo_deslocamento:.2f}")
-    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
+    st.write(f"Probabilidade de aceitação real (fornecedor) do lote: {tx_aceitacao:.4f}")
+    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor: {tx_injustamente_rejeitada:.4f}")
+    st.write(f"Probabilidade de aceitação desejado do lote: {tx_aceitacao_NQA:.4f}")
+    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor: {tx_injustamente_rejeitada_NQA:.4f}")
+    st.write(f"Custo de inspeção: R$ {custo_inspecao:.2f}")
+    st.write(f"Custo de deslocamento: R$ {custo_deslocamento:.2f}")
+    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}): {risco_consumidor:.4f}")
 
 
 
