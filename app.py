@@ -65,7 +65,7 @@ def main():
     st.write(f"Probabilidade de rejeição injusta do lote do fornecedor: {tx_injustamente_rejeitada_NQA:.4f}")
     st.write(f"Custo de inspeção: R$ {custo_inspecao:.2f}")
     st.write(f"Custo de deslocamento: R$ {custo_deslocamento:.2f}")
-    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {taxa_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
+    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
     
 
 if __name__ == "__main__":
