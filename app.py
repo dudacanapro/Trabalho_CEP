@@ -24,15 +24,15 @@ def calcular_ITM(tam_lote, tam_amostra, tx_aceitacao):
 
 def main():
     # Digitação dos dados 
-    tam_lote = st.number_input("Digite o tamanho do lote: ")
-    tam_amostra = st.number_input("Digite o tamanho da amostra: ")
+    tam_lote = st.number_input("Digite o tamanho do lote (N): ")
+    tam_amostra = st.number_input("Digite o tamanho da amostra (n): ")
     numero_lotes = st.number_input("Digiteo número de lotes: ")
-    itens_aceitos = st.number_input("Digite o número de itens aceitáveis: ")
+    itens_aceitos = st.number_input("Digite o número de itens aceitáveis (a): ")
     custo_unitario = st.number_input("Digite o custo unitário: R$ ")
     custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote rejeitado: R$ ")
     tx_defeitos = st.number_input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): ")
-    tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (número entre 0 a 1 separado por '.' ): ")
-    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (número entre 0 a 1 separado por '.'): ")
+    tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (NQA) (número entre 0 a 1 separado por '.' ): ")
+    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (PTDL) (número entre 0 a 1 separado por '.'): ")
 
 
     # Cálculo probabilidade de aceitação (NQA e Real do Fornecedor)
