@@ -1,38 +1,38 @@
-# Trabalho CEP 
-
+# Trabalho CEP Aplicativo 
+import streamlit as st
 from scipy.stats import binom
 
 def calcular_prob_aceitacao(tam_amostra, itens_aceitos, tx_defeitos):
-    # Calcular a probabilidade de aceitação usando a distribuição binomial
+    # Cálculo da probabilidade de aceitação usando a distribuição binomial
     prob_aceitacao = binom.cdf(itens_aceitos, tam_amostra, tx_defeitos)
     return prob_aceitacao
 
 def calcular_risco_fornecedor(tam_amostra, itens_aceitos, tx_defeitos_aceitaveis):
-    # Calcular o risco do fornecedor (probabilidade de rejeitar injustamente um lote aceitável)
+    # Cálculo do risco do fornecedor (probabilidade de rejeitar injustamente um lote aceitável)
     risco_fornecedor = 1 - binom.cdf(itens_aceitos, tam_amostra, tx_defeitos_aceitaveis)
     return risco_fornecedor
 
 def calcular_risco_consumidor(tam_amostra, itens_aceitos, tx_defeitos_inaceitaveis):
-    # Calcular o risco do consumidor (probabilidade de aceitar injustamente um lote inaceitável)
+    # Cálculo do risco do consumidor (probabilidade de aceitar injustamente um lote inaceitável)
     risco_consumidor = binom.cdf(itens_aceitos, tam_amostra, tx_defeitos_inaceitaveis)
     return risco_consumidor
 
 def calcular_ITM(tam_lote, tam_amostra, tx_aceitacao):
-    # Calcular o ITM
+    # Cálculo ITM
     ITM = (1 - tx_aceitacao) * (tam_lote - tam_amostra) + tam_amostra
     return ITM
 
 def main():
     # Digitação dos dados 
-    tam_lote = int(input("Digite o tamanho do lote (N): "))
-    tam_amostra = int(input("Digite o tamanho da amostra (n): "))
-    numero_lotes = int(input("Digiteo número de lotes: "))
-    itens_aceitos = int(input("Digite o número de itens aceitáveis (a): "))
-    custo_unitario = float(input("Digite o custo unitário: R$ "))
-    custo_lote_rejeitado = float(input("Digite o custo de deslocamento por lote rejeitado: R$ "))
+    tam_lote = st.number_input("Digite o tamanho do lote: ")
+    tam_amostra = st.number_input("Digite o tamanho da amostra: ")
+    numero_lotes = st.number_input("Digiteo número de lotes: ")
+    itens_aceitos = st.number_input("Digite o número de itens aceitáveis: ")
+    custo_unitario = st.number_input("Digite o custo unitário: R$ ")
+    custo_lote_rejeitado = st.number_input("Digite o custo de deslocamento por lote rejeitado: R$ ")
     tx_defeitos = float(input("Digite o histórico da taxa de defeituosos do fornecedor (número entre 0 a 1 separado por '.'): "))
-    tx_defeitos_aceitaveis = float(input("Digite a taxa de defeitos aceitável (NQA) (número entre 0 a 1 separado por '.' ): "))
-    tx_defeitos_inaceitaveis = float(input("Digite a taxa de defeitos inaceitável (PTDL) (número entre 0 a 1 separado por '.'): "))
+    tx_defeitos_aceitaveis = st.number_input("Digite a taxa de defeitos aceitável (número entre 0 a 1 separado por '.' ): "))
+    tx_defeitos_inaceitaveis = st.number_input("Digite a taxa de defeitos inaceitável (número entre 0 a 1 separado por '.'): "))
 
 
     # Cálculo probabilidade de aceitação (NQA e Real do Fornecedor)
@@ -60,13 +60,13 @@ def main():
 
 
     # Resultados 
-    print(f"A probabilidade de aceitação real (fornecedor) do lote é: {tx_aceitacao:.4f}")
-    print(f"A probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada:.4f}")
-    print(f"A probabilidade de aceitação desejado do lote é: {tx_aceitacao_NQA:.4f}")
-    print(f"A probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada_NQA:.4f}")
-    print(f"O custo de inspeção é: R$ {custo_inspecao:.2f}")
-    print(f"O custo de deslocamento é: R$ {custo_deslocamento:.2f}")
-    print(f"O risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
+    st.write(f"Probabilidade de aceitação real (fornecedor) do lote é: {tx_aceitacao:.4f}")
+    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada:.4f}")
+    st.write(f"Probabilidade de aceitação desejado do lote é: {tx_aceitacao_NQA:.4f}")
+    st.write(f"Probabilidade de rejeição injusta do lote do fornecedor é: {tx_injustamente_rejeitada_NQA:.4f}")
+    st.write(f"Custo de inspeção é: R$ {custo_inspecao:.2f}")
+    st.write(f"Custo de deslocamento é: R$ {custo_deslocamento:.2f}")
+    st.write(f"Risco do consumidor (aceitação injusta) com um lote (PTML: {tx_defeitos_inaceitaveis}) é: {risco_consumidor:.4f}")
 
 
 
